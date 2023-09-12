@@ -1,0 +1,10 @@
+div {
+    text-align: center;
+    margin-top: 100px;
+}
+.button {
+    border: thin solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+}

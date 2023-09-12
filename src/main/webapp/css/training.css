@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, Verdana, Geneva, sans-serif;
+    font-size: small;
+    background: #eeecdf;
+}
+header {
+    text-align: center;
+    border: thin solid black;
+    margin-bottom: 10px;
+}
+div.right {
+    margin-left: 120px
+}
+.with_border {
+    border: thin solid black;
+    background: white;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+#all_questions {
+    float: left;
+    width: 100px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+    overflow: auto;
+}
+span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+button {
+    margin-left: 5px;
+    margin-top: 50px;
+}
