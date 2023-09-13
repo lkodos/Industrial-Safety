@@ -14,8 +14,25 @@ public class ServiceDao implements Dao {
     private static final String GET_NUMBER_OF_QUESTIONS_SQL = "SELECT count(*) FROM questions";
     private static final String GET_QUESTION_SQL = "SELECT id, question FROM questions WHERE id = ?";
     private static final String GET_ANSWER_OPTIONS_SQL = "SELECT answer FROM answer_options WHERE question_id = ?";
+    private static final String GET_CORRECT_ANSWER_SQL = "SELECT correct_answer FROM correct_answers WHERE question_id = ?";
 
     private ServiceDao() {
+    }
+
+    public List<String> getCorrectAnswer(int id) {
+        try (Connection connection = ConnectionMnager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(GET_CORRECT_ANSWER_SQL)) {
+
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<String> correctAnswer = new ArrayList<>();
+            while (resultSet.next()) {
+                correctAnswer.add(resultSet.getString("correct_answer"));
+            }
+            return correctAnswer;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public List<String> getAnswerOptions(int id) {

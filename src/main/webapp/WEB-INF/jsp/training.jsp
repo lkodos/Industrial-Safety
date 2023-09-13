@@ -38,16 +38,16 @@
         </div>
         <span>Результат</span>
         <div class="with_border" id="result">
-<%--            <c:if test="${isRight == true}">--%>
-<%--                <c:out value="Верно"/>--%>
-<%--            </c:if>--%>
-<%--            <c:if test="${isRight == false}">--%>
-<%--                <c:out value="Неверно"/><br>--%>
-<%--                <c:out value="Правильный ответ:"/><br>--%>
+            <c:if test="${isRight == true}">
+                <c:out value="Верно"/>
+            </c:if>
+            <c:if test="${isRight == false}">
+                <c:out value="Неверно"/><br>
+                <c:out value="Правильный ответ:"/><br>
 <%--                <c:forEach var="correctAnswer" items="${requestScope.correctAnswer}">--%>
 <%--                    <p><c:out value="${requestScope.correctAnswer}"/></p>--%>
 <%--                </c:forEach>--%>
-<%--            </c:if>--%>
+            </c:if>
         </div>
         <button onclick='location.href="index.html"'>На главную</button>
     </div>

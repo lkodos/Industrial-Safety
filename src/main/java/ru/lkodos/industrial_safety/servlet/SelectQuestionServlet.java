@@ -21,6 +21,7 @@ public class SelectQuestionServlet extends HttpServlet {
         String question = service.getQuestionById(id);
         List<String> answerOptions = service.getAnswerOptions(id);
         req.setAttribute("id", id);
+        req.getServletContext().setAttribute("id", id);
         req.setAttribute("numberOfQuestions", id);
         req.setAttribute("question", question);
         req.setAttribute("answerOptions", answerOptions);

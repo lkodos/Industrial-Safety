@@ -13,6 +13,10 @@ public class Service {
     private Service() {
     }
 
+    public List<String> getCorrectAnswer(int id) {
+        return serviceDao.getCorrectAnswer(id);
+    }
+
     public List<String> getAnswerOptions(int id) {
         return serviceDao.getAnswerOptions(id);
     }
