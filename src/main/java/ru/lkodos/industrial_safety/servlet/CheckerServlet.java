@@ -20,6 +20,7 @@ public class CheckerServlet extends HttpServlet {
         List<String> answers = Arrays.asList(req.getParameterValues("answer"));
         int id = (int) req.getServletContext().getAttribute("id");
         List<String> correctAnswer = service.getCorrectAnswer(id);
+        req.getServletContext().setAttribute("correctAnswer", correctAnswer);
 
         if (answers.equals(correctAnswer)) {
             req.setAttribute("isRight", true);

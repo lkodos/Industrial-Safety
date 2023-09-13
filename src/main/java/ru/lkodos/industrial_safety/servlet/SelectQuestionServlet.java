@@ -20,11 +20,13 @@ public class SelectQuestionServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         String question = service.getQuestionById(id);
         List<String> answerOptions = service.getAnswerOptions(id);
-        req.setAttribute("id", id);
+//        req.setAttribute("id", id);
         req.getServletContext().setAttribute("id", id);
         req.setAttribute("numberOfQuestions", id);
-        req.setAttribute("question", question);
-        req.setAttribute("answerOptions", answerOptions);
+//        req.setAttribute("question", question);
+        req.getServletContext().setAttribute("question", question);
+//        req.setAttribute("answerOptions", answerOptions);
+        req.getServletContext().setAttribute("answerOptions", answerOptions);
         req.getRequestDispatcher("WEB-INF/jsp/training.jsp").forward(req, resp);
     }
 }

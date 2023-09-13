@@ -23,12 +23,12 @@
     <div class="right">
         <span>Текст вопроса</span>
         <div class="with_border" id="question">
-            <p><span>Вопрос ${requestScope.id}:</span> ${requestScope.question}</p>
+            <p><span>Вопрос ${applicationScope.id}:</span> ${applicationScope.question}</p>
         </div>
         <span>Варианты ответов</span>
         <div class="with_border" id="answer_options">
-            <form action="/checker" method="post">
-                <c:forEach var="answer" items="${requestScope.answerOptions}">
+            <form action="<c:url value="/checker"/>" method="post">
+                <c:forEach var="answer" items="${applicationScope.answerOptions}">
                     <p id="answer_option">
                         <input type="checkbox" name="answer" value="${answer}"> ${answer}
                     </p>
@@ -39,20 +39,20 @@
         <span>Результат</span>
         <div class="with_border" id="result">
             <c:if test="${isRight == true}">
-                <c:out value="Верно"/>
+                <span id="correct">ВЕРНО</span><br><br>
             </c:if>
             <c:if test="${isRight == false}">
-                <c:out value="Неверно"/><br>
-                <c:out value="Правильный ответ:"/><br>
-<%--                <c:forEach var="correctAnswer" items="${requestScope.correctAnswer}">--%>
-<%--                    <p><c:out value="${requestScope.correctAnswer}"/></p>--%>
-<%--                </c:forEach>--%>
+                <span id="incorrect">НЕВЕРНО</span><br><br>
+                <span>Правильный ответ:</span><br>
+                <ul>
+                    <c:forEach var="correctAnswer" items="${applicationScope.correctAnswer}">
+                        <li><c:out value="${correctAnswer}"/></li>
+                    </c:forEach>
+                </ul>
+
             </c:if>
         </div>
         <button onclick='location.href="index.html"'>На главную</button>
     </div>
-    <script>
-
-    </script>
 </body>
 </html>

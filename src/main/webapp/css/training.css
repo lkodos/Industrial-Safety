@@ -39,3 +39,17 @@ button {
     margin-left: 5px;
     margin-top: 50px;
 }
+li {
+    padding-bottom: 10px;
+}
+#result {
+    padding-top: 10px;
+}
+#correct {
+    font-size: large;
+    color: green;
+}
+#incorrect {
+    font-size: large;
+    color: red;
+}
