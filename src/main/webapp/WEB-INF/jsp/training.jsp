@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
@@ -16,7 +16,7 @@
     <div class="with_border" id="all_questions">
         <c:forEach var="i" begin="1" end="${applicationScope.numberOfQuestions}">
             <p>
-                <a id="${i}" href="/select?id=${i}#${i}"><c:out value="Вопрос ${i}"></c:out></a>
+                <a id="${i}" href="<c:url value="/select?id=${i}#${i}"/>"><c:out value="Вопрос ${i}"/></a>
             </p>
         </c:forEach>
     </div>
@@ -29,7 +29,7 @@
         <div class="with_border" id="answer_options">
             <form action="/checker" method="post">
                 <c:forEach var="answer" items="${requestScope.answerOptions}">
-                    <p>
+                    <p id="answer_option">
                         <input type="checkbox" name="answer" value="${answer}"> ${answer}
                     </p>
                 </c:forEach>
@@ -51,5 +51,8 @@
         </div>
         <button onclick='location.href="index.html"'>На главную</button>
     </div>
+    <script>
+
+    </script>
 </body>
 </html>

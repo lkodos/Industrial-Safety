@@ -25,6 +25,12 @@ div.right {
     height: 100%;
     overflow: auto;
 }
+#answer_options, #question {
+    padding-right: 10px;
+}
+#answer_option {
+    background-color: #d3e1ed;
+}
 span {
     font-weight: bold;
     margin-left: 5px;
