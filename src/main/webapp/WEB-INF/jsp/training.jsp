@@ -16,7 +16,8 @@
     <div class="with_border" id="all_questions">
         <c:forEach var="i" begin="1" end="${applicationScope.numberOfQuestions}">
             <p>
-                <a id="${i}" href="<c:url value="/select?id=${i}#${i}"/>"><c:out value="Вопрос ${i}"/></a>
+                <a id="${i}" href="<c:url value="/select?id=${i}#${i}"/>">Вопрос ${i}</a>
+
             </p>
         </c:forEach>
     </div>
@@ -46,13 +47,13 @@
                 <span>Правильный ответ:</span><br>
                 <ul>
                     <c:forEach var="correctAnswer" items="${applicationScope.correctAnswer}">
-                        <li><c:out value="${correctAnswer}"/></li>
+                        <li>${correctAnswer}</li>
                     </c:forEach>
                 </ul>
 
             </c:if>
         </div>
-        <button onclick='location.href="index.html"'>На главную</button>
+        <button onclick='location.href="index.html"#${i}'>На главную</button>
     </div>
 </body>
 </html>
